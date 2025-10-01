@@ -1,9 +1,10 @@
 import CardDeck from '@/app/components/CardDeck';
+import PlayerList from '@/app/components/PlayerList';
 import ScoreSheet from '@/app/components/Scoresheet';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function GameRoom() {
   const { roomCode } = useLocalSearchParams();
@@ -60,8 +61,8 @@ export default function GameRoom() {
 
   return (
     <View style={styles.container}>
-      {/* <Text>Room Code: {roomCode}</Text>
-      <PlayerList players={players} onAddPlayer={addPlayer} /> */}
+      <Text>Room Code: {roomCode}</Text>
+      <PlayerList players={players} onAddPlayer={addPlayer} />
       <CardDeck roomCode={roomCode as string} />
       <ScoreSheet players={players} onChangeScore={changeScore} />
     </View>

@@ -104,7 +104,7 @@ export default function CardDeck({ roomCode }: { roomCode: string }) {
   }, []);
 
   return (
-    <View style={{ marginVertical: 20, padding: 16, borderWidth: 1, borderRadius: 10 }}>
+    <View style={{ marginVertical: 20, padding: 16, borderWidth: 1, borderRadius: 12 }}>
 
       {currentCard ? (
         <FlatList
@@ -139,12 +139,15 @@ export default function CardDeck({ roomCode }: { roomCode: string }) {
 
 const styles = StyleSheet.create({
   item: {
-    // backgroundColor: '#f9c2ff',
+    backgroundColor: '#f9c2ff',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
   },
   title: {
     fontSize: 32,
+  },
+  button: {
+    backgroundColor: 'coral',
   },
 });
